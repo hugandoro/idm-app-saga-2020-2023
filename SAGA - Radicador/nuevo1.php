@@ -86,6 +86,7 @@ if ($_SESSION["radicador"]==2)
           <option value="DOCUMENTO FISICO">DOCUMENTO FISICO</option>
           <option value="CORREO ELECTRONICO">CORREO ELECTRONICO</option>
           <option value="MEDIO MAGNETICO">MEDIO MAGNETICO</option>
+          <option value="MEDIO MAGNETICO">PORTAL WEB</option>
       </select></td>
     </tr>
     <tr>

@@ -161,7 +161,7 @@ function Estadisticos($aux, $sle)
   while ($rowES = mysqli_fetch_row($resultES))
   {
 	$general = $general + 1;
-	if ($rowES[12] == '0000-00-00')
+	if (($rowES[12] == '0000-00-00') || ($rowES[12] == '0001-01-01')) // Verifica si no tiene una fecha de Respuesta - MySQL Original 0000-00-00 - Nueva version MySQL no reconoce Date a 0 por ello de usa una fecha comodin 01
 	{
 	  $abiertas = $abiertas + 1;
 	  
@@ -177,11 +177,11 @@ function Estadisticos($aux, $sle)
       $segundos_diferencia = $timestamp2 - $timestamp1;
       $dias_diferencia = $segundos_diferencia / (60 * 60 * 24);  
 
-	  if ($dias_diferencia >= 3)
+	  if (($dias_diferencia >= 3) && ($rowES[18] != '0001-01-01')) //Valida Dias de vencimiento fecha Comodin
 	    $verde = $verde + 1;
-	  if (($dias_diferencia >= 0) && ($dias_diferencia < 3))
+	  if (($dias_diferencia >= 0) && ($dias_diferencia < 3) && ($rowES[18] != '0001-01-01')) //Valida Dias de vencimiento fecha Comodin
 	    $amarillo = $amarillo +1;
-	  if ($dias_diferencia < 0)  
+	  if (($dias_diferencia < 0) || ($rowES[18] == '0001-01-01')) //Valida Dias de vencimiento fecha Comodin - SI ES COMODIN automaticamente la da por vencida ROJO
 	    $rojo = $rojo + 1;
 
 	}
@@ -200,7 +200,7 @@ function Verificador_PQR($codigo,$tipo,$sle)
   $resultES = mysqli_query($sle, $sqlES)  or die(mysql_error());
   while ($rowES = mysqli_fetch_row($resultES))
   {	
-	if ($rowES[12] == '0000-00-00')
+	if (($rowES[12] == '0000-00-00') || ($rowES[12] == '0001-01-01')) // Verifica si no tiene una fecha de Respuesta - MySQL Original 0000-00-00 - Nueva version MySQL no reconoce Date a 0 por ello de usa una fecha comodin 01
 	{  
 	  if ($tipo==4)
 	    return 1;
