@@ -81,12 +81,6 @@
 
                 <div class="col-md-12 mb-12">
                     <center>
-                        <hr>
-                        <h3>Certificado N° <?php echo $codigo; ?></h3><br>
-                        <div class="alert alert-danger">
-                            <strong>No existe en la base de datos del IDM</strong>
-                        </div>
-                        </hr>
                         <a href="interface_pazysalvo_consulta.php"><button type="submit" class="btn btn-warning">Regresar</button></a>
                     </center>
                 </div>
