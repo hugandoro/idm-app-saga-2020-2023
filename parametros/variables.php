@@ -23,7 +23,7 @@ $verde=0;
 
 $banner_cabezera = $ruta_principal."/imagenes/header.png"; //Imagen de Cabezera
 
-$licenciado = "IDM Dosquebradas"; //Empresa licenciada
+$licenciado = "EDOS Dosquebradas"; //Empresa licenciada
 
 $logos_licenciado = "<table width='220' border='0'> 
     <tr>
@@ -36,9 +36,9 @@ $logos_licenciado = "<table width='220' border='0'>
 $nombre_corto = "SAGA"; //Nombre Corto del Aplicativo
 $nombre_largo = "Sistema Asistencial y Gestion de Archivo";  //Nombre Largo del Aplicativo 
 $version = "2.0"; //Version del Aplicativo
-$copyright1 =  "Instituto de Desarrollo Municipal de Dosquebradas 2020 - 2023"; //Copyright Fecha
+$copyright1 =  "EDOS Dosquebradas 2020 - 2023"; //Copyright Fecha
 $copyright2 = "Desarrollador por Genus Group SAS<BR>"; //Copyright Fabricante
-$logo_fabricante = "$ruta_principal/imagenes/logo0.png"; //Copyright Logo
+$logo_fabricante = $ruta_principal."/imagenes/Logo0.png"; //Copyright Logo
 
 $Pie= "<HR><CENTER>
 $logos_licenciado <HR>
